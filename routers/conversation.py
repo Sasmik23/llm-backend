@@ -56,7 +56,6 @@ async def update_conversation(id: UUID, update_data: dict):
     if not conversation:
         raise HTTPException(status_code=404, detail="Conversation not found")
     
-    # Update allowed fields
     if "name" in update_data:
         conversation.name = update_data["name"]
     if "params" in update_data:

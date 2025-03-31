@@ -26,3 +26,9 @@ class Conversation(Document):
         name = "conversations"
 
 
+class PromptQueryDocument(Document):
+    conversation_id: UUID
+    anonymized_data: Dict[str, Any] = {}
+
+    class Settings:
+        name = "prompt_queries"
